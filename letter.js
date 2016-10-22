@@ -1,32 +1,21 @@
-var game = require('./game.js');
-var word = require('./word.js');
-
-var wrongGuess = [];
-var gameWord;
 var wordArray = [];
-exports.wordArray;
-var wordToBeGuessed = new WordToBeGuessed(game.randomWord)
-wordToBeGuessed.makeDashes();
-
-// var showGuessedLetter = new ShowGuessedLetter(wordArray,wrongGuess);
-// showGuessedLetter.printInfo();
 
 function WordToBeGuessed(randomWord) {
 	this.randomWord = randomWord,
-	this.makeDashes = function() {
+	this.hiddenWord = function() {
 		for (var i = 0; i < randomWord.length; i++) {
 		wordArray[i] = "_";
 		}
 		gameWord = wordArray.join(" ");
 		console.log(gameWord);
+	},
+	this.showLetter = function(){
+		for (var i = 0; i < randomWord.length; i++) {
+			if (userGuess == randomWord.charAt(i)) {
+				wordArray[i] = userGuess;
+			}
+		} 		
 	}
 }
 
-// function ShowGuessedLetter(wordArray,wrongGuess) {
-// 	this.wordArray = wordArray,
-// 	this.wrongGuess = wrongGuess,
-// 	this.printInfo = function() {
-// 		console.log(wordArray);
-// 	}
-// }
-
+module.exports = WordToBeGuessed;
