@@ -1,0 +1,30 @@
+{
+  "name": "week11-hangman",
+  "version": "1.0.0",
+  "description": "The game where guessing correctly will save a person from hanging",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShannonGreen27/week11-Hangman.git"
+  },
+  "keywords": [
+    "hangman",
+    "trivia",
+    "fun",
+    "games",
+    "guessing",
+    "games"
+  ],
+  "author": "Shannon Green",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShannonGreen27/week11-Hangman/issues"
+  },
+  "homepage": "https://github.com/ShannonGreen27/week11-Hangman#readme",
+  "dependencies": {
+    "inquirer": "^1.2.2"
+  }
+}
