@@ -1,20 +1,21 @@
-var wordArray = [];
-
-function WordToBeGuessed(randomWord) {
+function WordToBeGuessed(randomWord,userGuess) {
+	this.wordArray = [],
 	this.randomWord = randomWord,
-	this.hiddenWord = function() {
-		for (var i = 0; i < randomWord.length; i++) {
-		wordArray[i] = "_";
-		}
-		gameWord = wordArray.join(" ");
-		console.log(gameWord);
-	},
-	this.showLetter = function(){
-		for (var i = 0; i < randomWord.length; i++) {
-			if (userGuess == randomWord.charAt(i)) {
-				wordArray[i] = userGuess;
+	this.userGuess = userGuess
+	this.hideShow = function() {
+		if (userGuess == null) { 
+			for (var i = 0; i < randomWord.length; i++) {
+				this.wordArray[i] = "_";
 			}
-		} 		
+		} else {
+			for (var i = 0; i < randomWord.length; i++) {
+				if (userGuess == randomWord.charAt(i)) {
+					this.wordArray[i] = userGuess;
+				}
+			}
+		}
+		gameWord = this.wordArray.join(" ");
+		console.log(gameWord);
 	}
 }
 

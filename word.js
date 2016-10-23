@@ -1,15 +1,10 @@
-var wrongGuess = [];
-
-function CheckGuess(userGuess) {
+function CheckIfWrong(randomWord,userGuess) {
+	this.wrongGuess = [],
 	this.userGuess = userGuess,
-	this.result = function() {
-		if (wrongGuess.indexOf(userGuess) == -1) {
-
-		}
-
-		if (wordArray.indexOf(userGuess) == -1 && wrongGuess.indexOf(userGuess) == -1){
-			wrongGuess.push(userGuess);
-			guessesRemaining--;
-		}
+	this.randomWord = randomWord,
+	this.action = function() {
+			this.wrongGuess.push(userGuess);
 	}
 }
+
+module.exports = CheckIfWrong;
