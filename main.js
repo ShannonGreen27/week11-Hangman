@@ -6,12 +6,12 @@ var WordToBeGuessed = require('./letter.js');
 var wordToBeGuessed = new WordToBeGuessed(randomWord)
 var guessesRemaining = 8;
 
+console.log('You have '+guessesRemaining+' guesses remaining.');
+
+wordToBeGuessed.hideShow();
+
 function playHangman(){
 
-	console.log('You have '+guessesRemaining+' guesses remaining.');
-
-	wordToBeGuessed.hideShow();
-	console.log(randomWord);
 	if (guessesRemaining !== 0) {
 		inquirer.prompt([
 
@@ -25,6 +25,7 @@ function playHangman(){
 
 			var userGuess = answer.userGuess;
 			var checkIfWrong = new CheckIfWrong(randomWord,answer.userGuess);
+
 			if (checkIfWrong.wrongGuess.indexOf(userGuess) == -1) {
 				var wordToBeGuessed = new WordToBeGuessed(randomWord,userGuess)
 				wordToBeGuessed.hideShow(); 

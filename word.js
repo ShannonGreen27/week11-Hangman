@@ -3,7 +3,8 @@ function CheckIfWrong(randomWord,userGuess) {
 	this.userGuess = userGuess,
 	this.randomWord = randomWord,
 	this.action = function() {
-			this.wrongGuess.push(userGuess);
+			this.wrongGuess.push(this.userGuess);
+			console.log("Incorrect guesses so far: "+this.wrongGuess);
 	}
 }
 
